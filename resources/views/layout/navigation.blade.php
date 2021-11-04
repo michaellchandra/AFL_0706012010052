@@ -1,13 +1,27 @@
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#">WebSiteName</a>
-      </div>
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">Page 1</a></li>
-        <li><a href="#">Page 2</a></li>
-        <li><a href="#">Page 3</a></li>
+<nav class="navbar navbar-expand-sm bg-warning">
+  <div class="container-fluid">
+      <ul class="nav nav-pills">
+          <li class="nav-item">
+              <a class="nav-link 
+              @if ($title =='Home - Official Site')
+              active
+              @endif" href="/">Home</a>
+          </li>
+
+          <li class="nav-item">
+              <a class="nav-link 
+              @if ($title =='My Projects - Official Site')
+              active
+              @endif" href="/project">Project</a>
+          </li>
+
+          <li class="nav-item">
+              <a class="nav-link 
+              @if ($title =='Course - Official Site')
+              active
+              @endif" href="/course">Course List</a>
+          </li>
+
       </ul>
-    </div>
-  </nav>
+  </div>
+</nav>
