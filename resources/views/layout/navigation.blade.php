@@ -3,23 +3,17 @@
       <ul class="nav nav-pills">
           <li class="nav-item">
               <a class="nav-link 
-              @if ($title =='Home - Official Site')
+              @if ($title =='home')
               active
               @endif" href="/">Home</a>
           </li>
 
-          <li class="nav-item">
-              <a class="nav-link 
-              @if ($title =='My Projects - Official Site')
-              active
-              @endif" href="/project">Project</a>
-          </li>
 
           <li class="nav-item">
               <a class="nav-link 
-              @if ($title =='Course - Official Site')
+              @if ($title =='pcsoftwarelist')
               active
-              @endif" href="/course">Course List</a>
+              @endif" href="/course">Software List</a>
           </li>
 
       </ul>
