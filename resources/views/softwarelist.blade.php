@@ -13,14 +13,12 @@
             <th>Category</th>
             <th>Software Name</th>
             <th>Platform</th>
+            <th class="text-center">Action</th>
         </tr>
+        
+        
 
-    @foreach ($software as $sw )
-        <tr>
-            <td>{{ $loop -> index+1 }}</td>
-            <td><a href=""></a></td>
-        </tr>
-    @endforeach
+    
 
 
 

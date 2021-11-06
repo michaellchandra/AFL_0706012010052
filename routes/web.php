@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MainController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,17 +14,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home',[
-        'title' => 'home',
-        'pagetitle' => 'Home - Computer Software Seller'
-    ]);
-});
+// Route::get('/', function () {
+//     return view('home',[
+//         'title' => 'home',
+//         'pagetitle' => 'Home - Computer Software Seller'
+//     ]);
+// });
 
-Route::get('/software', function () {
-    return view('softwarelist',[
-        'title' => 'softwarelist',
-        'pagetitle' => "Software - Computer Software Seller"
-    ]);
-});
+// Route::get('/software', function () {
+//     return view('softwarelist',[
+//         'title' => 'softwarelist',
+//         'pagetitle' => "Software - Computer Software Seller"
+//     ]);
+// });
 
+Route::get('/', [MainController::class, 'index']);
+Route::get('/software', [MainController::class, 'viewSoftwareList']);
+Route::get('/addSoftware',[MainController::class]);
+    
