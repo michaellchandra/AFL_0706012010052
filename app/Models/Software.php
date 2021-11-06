@@ -9,10 +9,12 @@ class Software extends Model
 {
     use HasFactory;
 
+
+    protected $table = 'software';
     protected $fillable = ['name', 'code', 'platform', 'description'];
 
-    public function category(){
-        return $this->belongsTo(Category::class, 'code');
+    public function Software(){
+        return $this->belongsTo(Category::class, 'category_id', 'code');
     }
 }
 

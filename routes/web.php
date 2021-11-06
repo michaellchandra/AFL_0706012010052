@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\SoftwareController;
 use Illuminate\Support\Facades\Route;
@@ -15,23 +16,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('home',[
-//         'title' => 'home',
-//         'pagetitle' => 'Home - Computer Software Seller'
-//     ]);
-// });
-
-// Route::get('/software', function () {
-//     return view('softwarelist',[
-//         'title' => 'softwarelist',
-//         'pagetitle' => "Software - Computer Software Seller"
-//     ]);
-// });
-
 Route::get('/', [MainController::class, 'index']);
 Route::get('/software', [SoftwareController::class, 'viewSoftwareList']);
 Route::get('/addSoftware',[SoftwareController::class, 'addSoftwareList']);
 Route::post('/addData',[SoftwareController::class, 'addSoftwareData']);
-
-    
+Route::post('/addCategory',[CategoryController::class, 'addCategory']);    

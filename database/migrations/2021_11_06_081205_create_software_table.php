@@ -14,7 +14,7 @@ class CreateSoftwareTable extends Migration
     public function up()
     {
         Schema::create('software', function (Blueprint $table) {
-            $table->id(); //Tambah autoIncrement
+            $table->id()->autoIncrement(); 
             $table->foreignId('category_id');
             $table->string('name');
             $table->string('code');
