@@ -22,7 +22,7 @@ Route::get('/', function () {
 
 Route::get('/software', function () {
     return view('softwarelist',[
-        'title' => 'software',
+        'title' => 'softwarelist',
         'pagetitle' => "Software - Computer Software Seller"
     ]);
 });

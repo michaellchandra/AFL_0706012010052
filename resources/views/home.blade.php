@@ -13,7 +13,7 @@
 
     @section('main_content')
     <div class="container">
-        <h1>Halo</h1>
+        <h1>Halow</h1>
     </div>
     @endsection
     

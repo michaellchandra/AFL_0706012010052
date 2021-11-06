@@ -11,7 +11,7 @@
 
           <li class="nav-item">
               <a class="nav-link 
-              @if ($title =='pcsoftwarelist')
+              @if ($title =='softwarelist')
               active
               @endif" href="/software">Software List</a>
           </li>

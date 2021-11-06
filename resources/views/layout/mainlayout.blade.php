@@ -10,9 +10,9 @@
 </head>
 <body>
     @include('layout.navigation')
-    <div class="container">
+    {{-- <div class="container">
         <h1>{{ $title }}</h1>
-    </div>
+    </div> --}}
     
     <div class="container pt-5" >
         @yield('main_content')
