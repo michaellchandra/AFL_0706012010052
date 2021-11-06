@@ -12,7 +12,7 @@ class Software extends Model
     protected $fillable = ['name', 'code', 'platform', 'description'];
 
     public function category(){
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo(Category::class, 'code');
     }
 }
 

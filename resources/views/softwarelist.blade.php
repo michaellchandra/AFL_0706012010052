@@ -4,7 +4,7 @@
 @section('main_content')
 
 <div class="container">
-    <h1>List Course</h1>
+    <h1>Software List</h1>
 
     <table class="table table-striped">
         <tr>
@@ -15,6 +15,22 @@
             <th>Platform</th>
             <th class="text-center">Action</th>
         </tr>
+
+        @foreach ($software as $soft )
+        <tr class="table-secondary">
+            <td>{{ $loop->index+1 }}</td>
+            <td>{{ $soft['code'] }}</td>
+            <td></td>
+            <td>{{ $soft['name'] }}</td>
+            <td>{{ $soft['platform'] }}</td>
+            <td>
+                <a href="">
+                    <button type="submit" class="btn">Edit</button>
+                </a>
+            </td>
+        </tr>
+            
+        @endforeach
         
         
 
@@ -24,7 +40,7 @@
 
     </table>
 
-    <a href="" class="btn btn-secondary">Add New Software</a>
+    <a href="/addSoftware" class="btn btn-secondary">Add New Software</a>
 
 </div>
 @endsection
