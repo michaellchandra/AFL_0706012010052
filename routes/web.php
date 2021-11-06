@@ -15,13 +15,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home',[
-        
+        'title' => 'home',
+        'pagetitle' => 'Home - Computer Software Seller'
     ]);
 });
 
-Route::get('/', function () {
+Route::get('/software', function () {
     return view('softwarelist',[
-        
+        'title' => 'software',
+        'pagetitle' => "Software - Computer Software Seller"
     ]);
 });
 

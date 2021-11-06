@@ -13,7 +13,7 @@
               <a class="nav-link 
               @if ($title =='pcsoftwarelist')
               active
-              @endif" href="/course">Software List</a>
+              @endif" href="/software">Software List</a>
           </li>
 
       </ul>

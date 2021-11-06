@@ -8,9 +8,15 @@
     <title>Document</title>
 </head>
 <body>
-    @include('layout.navigation')
+    @extends('layout.mainlayout')
+    @section('title')
 
-    <h1>Halo</h1>
+    @section('main_content')
+    <div class="container">
+        <h1>Halo</h1>
+    </div>
+    @endsection
+    
     
 </body>
 </html>
