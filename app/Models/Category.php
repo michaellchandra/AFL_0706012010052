@@ -9,12 +9,12 @@ class Category extends Model
 {
     use HasFactory;
 
-    protected $table ='categories';
-    protected $primaryKey='code';
-    protected $keyType = 'bigInteger';
-    protected $fillable = ['category_name', 'category_code'];
+    // protected $table ='categories';
+    // protected $primaryKey='code';
+    // protected $keyType = 'bigInteger';
+    protected $guarded = ['id'];
 
-    public function Software(){
-        return $this->hasMany(Software::class, 'category_id', 'software_code');
+    public function software(){
+        return $this->hasMany(Software::class);
     }
 }

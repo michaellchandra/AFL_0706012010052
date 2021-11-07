@@ -10,11 +10,11 @@ class Software extends Model
     use HasFactory;
 
 
-    protected $table = 'software';
-    protected $fillable = ['software_name', 'software_code', 'software_platform', 'software_description'];
+    // protected $table = 'software';
+    protected $guarded = ['id'];
 
     public function category(){
-        return $this->belongsTo(Category::class, 'category_id', 'software_code');
+        return $this->belongsTo(Category::class);
     }
 }
 

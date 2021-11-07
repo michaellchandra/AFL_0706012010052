@@ -20,7 +20,6 @@ class SoftwareResourceController extends Controller
         return view ("softwarelist",[
             "title" => 'SoftwareList',
             'pagetitle' => "Software List",
-            'category' => Category::all(),
             'software' => Software::all()
         ]);
         

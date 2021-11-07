@@ -24,4 +24,4 @@ Route::get('/', [MainController::class, 'index']);
 // Route::post('/addCategory',[CategoryController::class, 'addCategory']);    
 
 Route::resource('Software', SoftwareResourceController::class);
-Route::resource('Category', CategoryController::class);
+Route::resource('Category', CategoryResourceController::class);

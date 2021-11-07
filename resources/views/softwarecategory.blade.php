@@ -12,14 +12,18 @@
             <th>No</th>
             <th>Code</th>
             <th>Category</th>
+            <th>Software Name</th>
+            <th>Platform</th>
             <th class="text-center">Action</th>
         </tr>
 
-        @foreach ($category as $cat )
+        @foreach ($software as $soft )
         <tr class="table-secondary">
             <td>{{ $loop->index+1 }}</td>
-            <td>{{ $cat['code'] }}</td>
-            <td></td>
+            <td>{{ $soft['software_code'] }}</td>
+            <td><a href="{{ route('Category.show',$soft->category->category_code) }}">{{ $soft->category->category_name}}</a></td>
+            <td>{{ $soft['software_name'] }}</td>
+            <td>{{ $soft['software_platform'] }}</td>
             <td>
                 <a href="">
                     <button type="submit" class="btn">Edit</button>
@@ -29,10 +33,15 @@
             
         @endforeach
         
+        
+
+    
+
+
+
     </table>
 
-    <a href="/addSoftware" class="btn btn-secondary">Add New Software</a>
+    <a href="{{ route('Software.create') }}" class="btn btn-secondary">Add New Software</a>
 
 </div>
-
 @endsection

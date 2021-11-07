@@ -15,7 +15,7 @@ class CreateSoftwareTable extends Migration
     {
         Schema::create('software', function (Blueprint $table) {
             $table->id()->autoIncrement(); 
-            $table->bigInteger('category_id')->unsigned();
+            $table->foreignId('category_id')->constrained('categories')->onUpdate('cascade')->onDelete('cascade');
             $table->string('software_name');
             $table->string('software_code');
             $table->string('software_platform');

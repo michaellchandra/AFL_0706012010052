@@ -19,10 +19,10 @@
         @foreach ($software as $soft )
         <tr class="table-secondary">
             <td>{{ $loop->index+1 }}</td>
-            <td>{{ $soft['code'] }}</td>
-            <td></td>
-            <td>{{ $soft['name'] }}</td>
-            <td>{{ $soft['platform'] }}</td>
+            <td>{{ $soft['software_code'] }}</td>
+            <td><a href="{{ route('Category.show',$soft->category->category_code) }}">{{ $soft->category->category_name}}</a></td>
+            <td>{{ $soft['software_name'] }}</td>
+            <td>{{ $soft['software_platform'] }}</td>
             <td>
                 <a href="">
                     <button type="submit" class="btn">Edit</button>

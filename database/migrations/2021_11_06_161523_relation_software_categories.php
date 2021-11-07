@@ -13,13 +13,7 @@ class RelationSoftwareCategories extends Migration
      */
     public function up()
     {
-        Schema::table('software', function (Blueprint $table) {
-            //
-            $table->foreign('category_id')
-            ->references('id')->on('categories')
-            ->onDelete('cascade')
-            ->onUpdate('cascade');
-        });
+        
     }
 
     /**
