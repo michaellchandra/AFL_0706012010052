@@ -49,13 +49,7 @@ class CategoryResourceController extends Controller
     public function store(Request $request)
     {
         //
-        $this->validate($request, [
-            'category_name' => 'required|min:5|max:50',
-            'category_id' => 'required'
-        ]);
-
         Category::create([
-            'category_id' => $request->category_id,
             'category_name' =>$request->category_name,
             'category_code' =>$request->category_code
         ]);
@@ -68,12 +62,11 @@ class CategoryResourceController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function show(Category $category)
+    public function show($id)
     {
-        //
-        $name = "Category List";
-        $software = Category::findOrFail($category);
-        return view('showCategoryDetail', compact('category', 'category_name'));
+        $title = 'ShowCategory';
+        $category = Category::findOrFail($id);
+        return view('showCategoryDetail', compact('category','title'));
 
     }
 

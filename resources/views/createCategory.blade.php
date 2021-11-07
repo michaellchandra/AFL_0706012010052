@@ -10,9 +10,9 @@
             <label for="category_name" class="form-label">Category Name : </label>
             <input id="category_name" name="category_name" type="text" class="form-control">
 
-            <label for="inputCategoryCode" class="form-label">Code : </label>
-            <input id="code" name="code" type="text" class="form-control">
-
+            <label for="category_code" class="form-label">Code : </label>
+            <input id="category_code" name="category_code" type="text" class="form-control">
+            
             <br>
             <button type="submit" class="btn bg-success">Submit</button>
 
@@ -21,3 +21,5 @@
     </form>
 
 </div>
+
+@endsection

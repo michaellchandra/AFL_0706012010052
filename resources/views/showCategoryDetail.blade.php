@@ -6,16 +6,16 @@
 
 <div class="container">
     <div class="row justify-content-center">
-        <h1>Detail Software Category {{ $category['code'] }}</h1>
-        <p>Nama Kategori : {{ $category['name'] }}</p>
+        <h1>Detail Software Category {{ $category['category_code'] }}</h1>
+        <p>Nama Kategori : {{ $category['category_name'] }}</p>
 
         <h4>List Software</h4>
         <table class="table">
             <thead>
                 <tr>
                     <th scope="col">No</th>
-                    <th scope="col">Software</th>
                     <th scope="col">Code</th>
+                    <th scope="col">Software Name</th>
                     <th scope="col">Platform</th>
                     <th scope="col">Description</th>
                 </tr>
@@ -24,10 +24,13 @@
             <tbody>
                 @php $index = 1 @endphp
                 @foreach ($category->software as $soft )
+                @csrf
                     <tr>
-                        <th scope="row">{{ $index }}</th>
-                        @php $index++ @endphp
-                        <td>{{ $soft[] }}</td>
+                        <td>{{ $loop->index+1 }}</td>
+                        <td>{{ $soft['software_code'] }}</td>
+                        <td>{{ $soft['software_name'] }}</td>
+                        <td>{{ $soft['software_platform'] }}</td>
+                        <td>{{ $soft['software_description'] }}</td>
                     </tr>
                 @endforeach
             </tbody>

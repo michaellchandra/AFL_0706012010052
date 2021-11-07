@@ -41,7 +41,7 @@
 
     </table>
 
-    <a href="{{ route('Software.create') }}" class="btn btn-secondary">Add New Category</a>
+    <a href="{{ route('Category.create') }}" class="btn btn-secondary">Add New Category</a>
 
 </div>
 @endsection
