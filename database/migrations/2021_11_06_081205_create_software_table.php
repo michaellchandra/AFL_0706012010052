@@ -15,7 +15,7 @@ class CreateSoftwareTable extends Migration
     {
         Schema::create('software', function (Blueprint $table) {
             $table->id()->autoIncrement(); 
-            $table->string('category_id');
+            $table->bigInteger('category_id')->unsigned();
             $table->string('software_name');
             $table->string('software_code');
             $table->string('software_platform');

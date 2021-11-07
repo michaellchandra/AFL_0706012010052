@@ -40,7 +40,7 @@
 
     </table>
 
-    <a href="/addSoftware" class="btn btn-secondary">Add New Software</a>
+    <a href="{{ route('Software.create') }}" class="btn btn-secondary">Add New Software</a>
 
 </div>
 @endsection

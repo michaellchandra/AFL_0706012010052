@@ -13,7 +13,7 @@
               <a class="nav-link 
               @if ($title =='softwarelist')
               active
-              @endif" href="/software">Software List</a>
+              @endif" href="{{ route('Software.index') }}">Software List</a>
           </li>
 
       </ul>

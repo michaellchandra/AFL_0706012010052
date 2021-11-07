@@ -11,10 +11,10 @@ class Software extends Model
 
 
     protected $table = 'software';
-    protected $fillable = ['name', 'code', 'platform', 'description'];
+    protected $fillable = ['software_name', 'software_code', 'software_platform', 'software_description'];
 
     public function category(){
-        return $this->belongsTo(Category::class, 'category_id', 'code');
+        return $this->belongsTo(Category::class, 'category_id', 'software_code');
     }
 }
 

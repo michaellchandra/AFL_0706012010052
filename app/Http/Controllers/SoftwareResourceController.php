@@ -20,7 +20,8 @@ class SoftwareResourceController extends Controller
         return view ("softwarelist",[
             "title" => 'SoftwareList',
             'pagetitle' => "Software List",
-            'category' => Category::all()
+            'category' => Category::all(),
+            'software' => Software::all()
         ]);
         
     }
@@ -36,7 +37,8 @@ class SoftwareResourceController extends Controller
         return view('createSoftwarelist',[
             'title' => 'createSoftwarelist',
             'pagetitle' => "Create Software",
-            'software' => Software::all()
+            'software' => Software::all(),
+            'category' => Category::all()
         ]);
     }
 
@@ -50,17 +52,18 @@ class SoftwareResourceController extends Controller
     {
         //
         $this->validate($request, [
-            'software_name' => 'required|min:5|max'
+            'software_name' => 'required|min:5|max:50',
+            'category_id' => 'required'
         ]);
 
         Software::create([
-
+            'category_id' => $request->category_id,
             'software_name' =>$request->software_name,
             'software_code' =>$request->software_code,
             'software_platform' =>$request->software_platform,
             'software_description' =>$request->software_description
         ]);
-        return redirect(route('software.index'));
+        return redirect(route('Software.index'));
 
         
         

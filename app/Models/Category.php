@@ -12,9 +12,9 @@ class Category extends Model
     protected $table ='categories';
     protected $primaryKey='code';
     protected $keyType = 'bigInteger';
-    protected $fillable = ['name', 'code'];
+    protected $fillable = ['category_name', 'category_code'];
 
-    public function Category(){
-        return $this->hasMany(Software::class, 'category_id', 'code');
+    public function Software(){
+        return $this->hasMany(Software::class, 'category_id', 'software_code');
     }
 }

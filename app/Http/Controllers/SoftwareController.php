@@ -29,15 +29,15 @@ class SoftwareController extends Controller
     public function addSoftwareData(Request $request){
 
         
-        $software = new Software();
-        $software->name = $request->input('name');
-        $software->platform = $request->input('platform');
-        $software->code = $request->input('code');
-        // $software->id = rand(1,100);
-        $software->category_id = rand(101,300);
-        $software->description = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod doloribus quibusdam vitae nesciunt saepe delectus, nam quae ipsam aspernatur. Blanditiis?";
+        // $software = new Software();
+        // $software->name = $request->input('name');
+        // $software->platform = $request->input('platform');
+        // $software->code = $request->input('code');
+        // // $software->id = rand(1,100);
+        // $software->category_id = rand(101,300);
+        // $software->description = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod doloribus quibusdam vitae nesciunt saepe delectus, nam quae ipsam aspernatur. Blanditiis?";
 
-        $software->save();
+        // $software->save();
         
         return view('softwarelist',[
             'title' => 'softwarelist',

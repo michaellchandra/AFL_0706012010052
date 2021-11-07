@@ -4,7 +4,7 @@
 
 <div class="container mt-5">
     
-    <form action="/addCategory" method="post">
+    <form action="{{  }}" method="post">
         @csrf 
         <div>
             <label for="inputCategoryName" class="form-label">Category Name : </label>

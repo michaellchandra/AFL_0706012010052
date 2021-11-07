@@ -3,6 +3,7 @@
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\SoftwareController;
+use App\Http\Controllers\SoftwareResourceController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,5 +23,5 @@ Route::get('/', [MainController::class, 'index']);
 // Route::post('/addData',[SoftwareController::class, 'addSoftwareData']);
 // Route::post('/addCategory',[CategoryController::class, 'addCategory']);    
 
-Route::resource('software', SoftwareResourceController::class);
+Route::resource('Software', SoftwareResourceController::class);
 Route::resource('Category', CategoryController::class);
