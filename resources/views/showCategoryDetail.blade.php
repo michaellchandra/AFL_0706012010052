@@ -11,15 +11,26 @@
 
         <h4>List Software</h4>
         <table class="table">
-            <th>
+            <thead>
                 <tr>
-                    <td scope="col">No</td>
-                    <td scope="col">Software</td>
-                    <td scope="col">Code</td>
-                    <td scope="col">Platform</td>
-                    <td scope="col">Description</td>
+                    <th scope="col">No</th>
+                    <th scope="col">Software</th>
+                    <th scope="col">Code</th>
+                    <th scope="col">Platform</th>
+                    <th scope="col">Description</th>
                 </tr>
-            </th>
+            </thead>
+
+            <tbody>
+                @php $index = 1 @endphp
+                @foreach ($category->software as $soft )
+                    <tr>
+                        <th scope="row">{{ $index }}</th>
+                        @php $index++ @endphp
+                        <td>{{ $soft[] }}</td>
+                    </tr>
+                @endforeach
+            </tbody>
         </table>
 
     </div>
