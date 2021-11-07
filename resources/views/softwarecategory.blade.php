@@ -29,12 +29,6 @@
             
         @endforeach
         
-        
-
-    
-
-
-
     </table>
 
     <a href="/addSoftware" class="btn btn-secondary">Add New Software</a>
