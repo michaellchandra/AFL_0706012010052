@@ -17,18 +17,14 @@
                 @foreach ($category as $cat )
                 <option value="{{ $cat->id }}">{{ $cat->category_name }}</option>
                 @endforeach
-                
             </select>
         
-
-            
             <label for="software_platform" class="form-label">Platform : </label>
             <input type="text" name="software_platform" class="form-control">
-            {{-- <select name="platform" class="form-control">
-                <option value="PC - Windows">PC - Windows</option>
-                <option value="PC - MacOS">PC - MacOS</option>
-                <option value="Mobile - Android">Mobile - Android</option>
-            </select> --}}
+            
+            <label for="software_description" class="form-label">Description : </label>
+            <input type="text" name="software_description" class="form-control">
+            
             <br>
             <button type="submit" class="btn bg-success">Submit</button>
 

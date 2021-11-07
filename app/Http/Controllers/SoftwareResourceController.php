@@ -82,9 +82,9 @@ class SoftwareResourceController extends Controller
         //     'software' => Software::where('category_id', $id)->first();
         //     return view()
         // ]);
-            $name = "Software List";
+        $title = 'showSoftware';
             $software = Software::findOrFail($id);
-            return view('showCategoryDetail', compact('software', 'name'));
+            return view('showSoftware', compact('software','title'));
 
     }
 
@@ -96,11 +96,14 @@ class SoftwareResourceController extends Controller
      */
     public function edit($id)
     {
+        $category = Category::all();
+        $software = Software::findOrFail($id);
         //
-        return view('editSoftwareList',  [
+        return view('editSoftwareList',compact('category','software'),  [
             'title' => 'editSoftwareList',
             'pagetitle' => 'Edit Software List',
             'software' => Software::findOrFail($id)
+            
         ]);
     }
 
@@ -126,6 +129,7 @@ class SoftwareResourceController extends Controller
                 'updated_at'=> \Carbon\Carbon::now()
             ]
         );
+        return redirect(route('Software.index'));
     }
 
     /**

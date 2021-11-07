@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\CategoryResourceController;
 use App\Http\Controllers\SoftwareController;
 use App\Http\Controllers\SoftwareResourceController;
 use Illuminate\Support\Facades\Route;

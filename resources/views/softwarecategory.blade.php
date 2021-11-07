@@ -19,7 +19,7 @@
         <tr class="table-secondary">
             <td>{{ $loop->index+1 }}</td>
             <td>{{ $cat['category_code'] }}</td>
-            <td>{{ $soft['software_name'] }}</td>
+            <td>{{ $cat['category_name'] }}</td>
             <td>
                 <a href="">
                     <button type="submit" class="btn">Edit</button>

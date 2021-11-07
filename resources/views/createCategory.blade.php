@@ -4,11 +4,11 @@
 
 <div class="container mt-5">
     
-    <form action="{{  }}" method="post">
+    <form action="{{ route('Category.store')  }}" method="post">
         @csrf 
         <div>
-            <label for="inputCategoryName" class="form-label">Category Name : </label>
-            <input id="name" name="name" type="text" class="form-control">
+            <label for="category_name" class="form-label">Category Name : </label>
+            <input id="category_name" name="category_name" type="text" class="form-control">
 
             <label for="inputCategoryCode" class="form-label">Code : </label>
             <input id="code" name="code" type="text" class="form-control">
