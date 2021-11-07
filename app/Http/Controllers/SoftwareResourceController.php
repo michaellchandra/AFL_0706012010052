@@ -114,6 +114,18 @@ class SoftwareResourceController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $software= Software::findOrFail($id);
+        $software->update(
+            [
+                'category_id' => $request->category_id,
+                'software_name' =>$request->software_name,
+                'software_code' =>$request->software_code,
+                'software_platform' =>$request->software_platform,
+                'software_description' =>$request->software_description,
+                'created_at'=> \Carbon\Carbon::now(),
+                'updated_at'=> \Carbon\Carbon::now()
+            ]
+        );
     }
 
     /**
@@ -125,8 +137,8 @@ class SoftwareResourceController extends Controller
     public function destroy($id)
     {
         //
-        $category = Category::findOrFail($id);
-        $category->delete();
-        return redirect(route('Category.index'));
+        $software = Software::findOrFail($id);
+        $software->delete();
+        return redirect(route('Software.index'));
     }
 }

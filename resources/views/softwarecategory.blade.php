@@ -12,18 +12,14 @@
             <th>No</th>
             <th>Code</th>
             <th>Category</th>
-            <th>Software Name</th>
-            <th>Platform</th>
             <th class="text-center">Action</th>
         </tr>
 
-        @foreach ($software as $soft )
+        @foreach ($category as $cat )
         <tr class="table-secondary">
             <td>{{ $loop->index+1 }}</td>
-            <td>{{ $soft['software_code'] }}</td>
-            <td><a href="{{ route('Category.show',$soft->category->category_code) }}">{{ $soft->category->category_name}}</a></td>
+            <td>{{ $cat['category_code'] }}</td>
             <td>{{ $soft['software_name'] }}</td>
-            <td>{{ $soft['software_platform'] }}</td>
             <td>
                 <a href="">
                     <button type="submit" class="btn">Edit</button>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Software;
 use Illuminate\Http\Request;
 
 class CategoryResourceController extends Controller
@@ -15,10 +16,9 @@ class CategoryResourceController extends Controller
     public function index()
     {
         //
-        return view ("softwarelist",[
-            "title" => 'SoftwareList',
-            'pagetitle' => "Software List",
-            
+        return view ("softwarecategory",[
+            "title" => 'SoftwareCategory',
+            'pagetitle' => "Software Category",
             'category' => Category::all()
         ]);
     }
@@ -31,6 +31,13 @@ class CategoryResourceController extends Controller
     public function create()
     {
         //
+
+        return view('createCategory',[
+            'title' => 'createcategory',
+            'pagetitle' => 'Create Category',
+            'software' => Software::all(),
+            'category' => Category::all()
+        ]);
     }
 
     /**
@@ -42,6 +49,17 @@ class CategoryResourceController extends Controller
     public function store(Request $request)
     {
         //
+        $this->validate($request, [
+            'category_name' => 'required|min:5|max:50',
+            'category_id' => 'required'
+        ]);
+
+        Category::create([
+            'category_id' => $request->category_id,
+            'category_name' =>$request->category_name,
+            'category_code' =>$request->category_code
+        ]);
+        return redirect(route('Category.index'));
     }
 
     /**
@@ -53,6 +71,10 @@ class CategoryResourceController extends Controller
     public function show(Category $category)
     {
         //
+        $name = "Category List";
+        $software = Category::findOrFail($category);
+        return view('showCategoryDetail', compact('category', 'category_name'));
+
     }
 
     /**
@@ -64,6 +86,12 @@ class CategoryResourceController extends Controller
     public function edit(Category $category)
     {
         //
+
+        return view('editCategory',  [
+            'title' => 'editCategory',
+            'pagetitle' => 'Edit Category',
+            'category' => Category::findOrFail($category)
+        ]);
     }
 
     /**
@@ -76,6 +104,16 @@ class CategoryResourceController extends Controller
     public function update(Request $request, Category $category)
     {
         //
+
+        $category = Category::findOrFail($category);
+        $category->update(
+            [
+                'category_name'=>$request->category_name,
+                'category_code'=>$request->category_code,
+                'created_at'=> \Carbon\Carbon::now(),
+                'updated_at'=> \Carbon\Carbon::now()
+            ]
+        );
     }
 
     /**
@@ -87,5 +125,8 @@ class CategoryResourceController extends Controller
     public function destroy(Category $category)
     {
         //
+        $category = Category::findOrFail($category);
+        $category->delete();
+        return redirect(route('Category.index'));
     }
 }
