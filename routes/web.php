@@ -16,11 +16,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', [MainController::class, 'index']);
-// Route::get('/software', [SoftwareController::class, 'viewSoftwareList']);
-// Route::get('/addSoftware',[SoftwareController::class, 'addSoftwareList']);
-// Route::post('/addData',[SoftwareController::class, 'addSoftwareData']);
-// Route::post('/addCategory',[CategoryController::class, 'addCategory']);    
+Route::get('/', [MainController::class, 'index']);
+Route::get('/software', [SoftwareController::class, 'viewSoftwareList']);
+Route::get('/addSoftware',[SoftwareController::class, 'addSoftwareList']);
+Route::post('/addData',[SoftwareController::class, 'addSoftwareData']);
+Route::post('/addCategory',[CategoryController::class, 'addCategory']);    
 
-Route::resource('software', SoftwareResourceController::class);
-Route::resource('category', CategoryController::class);
+// Route::resource('software', SoftwareResourceController::class);
+// Route::resource('category', CategoryController::class);

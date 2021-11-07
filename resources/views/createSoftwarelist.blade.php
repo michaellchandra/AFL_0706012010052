@@ -12,7 +12,7 @@
 
             <label for="inputSoftwareCode" class="form-label">Code : </label>
             <input id="code" name="code" type="text" class="form-control">
-
+            
             <label for="inputSoftwarePlatform" class="form-label">Platform : </label>
             <select name="platform" class="form-control">
                 <option value="PC - Windows">PC - Windows</option>

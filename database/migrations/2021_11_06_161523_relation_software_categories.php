@@ -15,8 +15,8 @@ class RelationSoftwareCategories extends Migration
     {
         Schema::table('software', function (Blueprint $table) {
             //
-            $table->foreign('code')
-            ->references('category_id')->on('category')
+            $table->foreign('category_id')
+            ->references('id')->on('categories')
             ->onDelete('cascade')
             ->onUpdate('cascade');
         });
