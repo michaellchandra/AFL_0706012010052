@@ -19,9 +19,17 @@
                 @endforeach
             </select>
         
+            <br>
             <label for="software_platform" class="form-label">Platform : </label>
-            <input type="text" name="software_platform" class="form-control">
-            
+            <select name="software_platform" id="software_platform">
+                <option value="PC - Windows">PC - Windows</option>
+                <option value="PC - MacOS">PC - MacOS</option>
+                <option value="Mobile - Android">Mobile - Android</option>
+                <option value="Mobile - iOS">Mobile - iOS</option>
+            </select>
+
+            <br>
+
             <label for="software_description" class="form-label">Description : </label>
             <input type="text" name="software_description" class="form-control">
             

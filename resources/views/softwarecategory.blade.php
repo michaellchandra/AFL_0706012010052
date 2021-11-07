@@ -1,5 +1,6 @@
 @extends('layout.softwarelayout')
 
+
 @section('main_content')
 
 <div class="container">

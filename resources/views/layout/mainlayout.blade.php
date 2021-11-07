@@ -20,10 +20,10 @@
     </div>
     
     <footer>
-        <nav class="justify-content-center fixed-bottom bg-warning text-dark text-center">
-            <p>Copyright 2021 | Computer Software Seller</p>
-
-        </nav>
+        <div class="justify-content-center fixed-bottom text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2021 Copyright:
+            <a class="text-dark" href="https://macefs.com/">Michael Chandra</a>
+          </div>
     </footer>
 
 

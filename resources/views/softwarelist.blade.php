@@ -21,7 +21,7 @@
         <tr class="table-secondary">
             <td>{{ $loop->index+1 }}</td>
             <td>{{ $soft['software_code'] }}</td>
-            <td><a href="{{ route('Category.show',$soft->category->category_code) }}">{{ $soft->category->category_name}}</a></td>
+            <td><a href="{{ route('Category.show',$soft->category->id) }}">{{ $soft->category->category_name}}</a></td>
             <td>{{ $soft['software_name'] }}</td>
             <td>{{ $soft['software_platform'] }}</td>
             <td>{{ $soft['software_description'] }}</td>
