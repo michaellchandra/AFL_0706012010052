@@ -12,6 +12,11 @@
 
             <label for="inputSoftwareCode" class="form-label">Code : </label>
             <input id="code" name="code" type="text" class="form-control">
+
+            <label for="inputCategoryId" class="form-label">Category : </label>
+            <input id="category" name="category_id" type="text" class="form-control">
+
+
             
             <label for="inputSoftwarePlatform" class="form-label">Platform : </label>
             <select name="platform" class="form-control">

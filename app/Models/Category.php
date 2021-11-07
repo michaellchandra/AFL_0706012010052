@@ -11,7 +11,7 @@ class Category extends Model
 
     protected $table ='categories';
     protected $primaryKey='code';
-    protected $keyType = 'string';
+    protected $keyType = 'bigInteger';
     protected $fillable = ['name', 'code'];
 
     public function Category(){

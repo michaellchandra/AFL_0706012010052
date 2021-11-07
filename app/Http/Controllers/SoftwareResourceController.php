@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
+use App\Models\Software;
 
 class SoftwareResourceController extends Controller
 {
@@ -14,6 +16,12 @@ class SoftwareResourceController extends Controller
     public function index()
     {
         //
+
+        return view ("softwarelist",[
+            "title" => 'SoftwareList',
+            'pagetitle' => "Software List",
+            'category' => Category::all()
+        ]);
         
     }
 
@@ -25,7 +33,11 @@ class SoftwareResourceController extends Controller
     public function create()
     {
         //
-        return view('')
+        return view('createSoftwarelist',[
+            'title' => 'createSoftwarelist',
+            'pagetitle' => "Create Software",
+            'software' => Software::all()
+        ]);
     }
 
     /**
@@ -37,6 +49,20 @@ class SoftwareResourceController extends Controller
     public function store(Request $request)
     {
         //
+        $this->validate($request, [
+            'software_name' => 'required|min:5|max'
+        ]);
+
+        Software::create([
+
+            'software_name' =>$request->software_name,
+            'software_code' =>$request->software_code,
+            'software_platform' =>$request->software_platform,
+            'software_description' =>$request->software_description
+        ]);
+        return redirect(route('software.index'));
+
+        
         
 
     }
@@ -50,6 +76,14 @@ class SoftwareResourceController extends Controller
     public function show($id)
     {
         //
+        // return view('showCategoryDetail',[
+        //     'software' => Software::where('category_id', $id)->first();
+        //     return view()
+        // ]);
+            $name = "Software List";
+            $software = Software::findOrFail($id);
+            return view('showCategoryDetail', compact('software', 'name'));
+
     }
 
     /**
@@ -61,6 +95,11 @@ class SoftwareResourceController extends Controller
     public function edit($id)
     {
         //
+        return view('editSoftwareList',  [
+            'title' => 'editSoftwareList',
+            'pagetitle' => 'Edit Software List',
+            'software' => Software::findOrFail($id)
+        ]);
     }
 
     /**
@@ -84,5 +123,8 @@ class SoftwareResourceController extends Controller
     public function destroy($id)
     {
         //
+        $category = Category::findOrFail($id);
+        $category->delete();
+        return redirect(route('Category.index'));
     }
 }

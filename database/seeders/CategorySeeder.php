@@ -17,17 +17,15 @@ class CategorySeeder extends Seeder
     {
         //
         DB::table('categories')->insert([
-            'name' => 'Antivirus',
-            'code' => 'AV',
-            'created_at' => \Carbon\Carbon::now(),
-            'updated_at' => \Carbon\Carbon::now()
+            'category_name' => 'Antivirus',
+            'category_code' => 'AV',
+           
         ]);
 
         DB::table('categories')->insert([
-            'name' => 'Multimedia',
-            'code' => 'MM',
-            'created_at' => \Carbon\Carbon::now(),
-            'updated_at' => \Carbon\Carbon::now()
+            'category_name' => 'Multimedia',
+            'category_code' => 'MM',
+            
         ]);
         
     }

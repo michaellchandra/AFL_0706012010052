@@ -15,11 +15,11 @@ class CreateSoftwareTable extends Migration
     {
         Schema::create('software', function (Blueprint $table) {
             $table->id()->autoIncrement(); 
-            $table->bigInteger('category_id')->unsigned();
-            $table->string('name');
-            $table->string('code');
-            $table->string('platform');
-            $table->string('description')->nullable();
+            $table->string('category_id');
+            $table->string('software_name');
+            $table->string('software_code');
+            $table->string('software_platform');
+            $table->string('software_description')->nullable();
             $table->timestamps();
         });
     }
