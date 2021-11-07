@@ -1,11 +1,9 @@
 @extends('layout.softwarelayout')
 
-@section('title')
-
 @section('main_content')
 
 <div class="container">
-    <h1>Software List</h1>
+    <h1>Software Category</h1>
 
     <table class="table table-striped">
         <tr>
@@ -21,23 +19,29 @@
             <td>{{ $cat['category_code'] }}</td>
             <td>{{ $cat['category_name'] }}</td>
             <td>
-                <a href="">
+                <a href="{{ route('Category.edit', $cat->id) }}">
                     <button type="submit" class="btn">Edit</button>
                 </a>
+                <form action="{{ route('Category.destroy', $cat->id) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn">Delete</button>
+                </form>
+
+                <a href="{{ route('Category.show',$cat->id )}}">
+                    <button type="submit" class="btn">Show</button>
+                </a>
+
+
             </td>
         </tr>
             
         @endforeach
         
-        
-
-    
-
-
 
     </table>
 
-    <a href="{{ route('Software.create') }}" class="btn btn-secondary">Add New Software</a>
+    <a href="{{ route('Software.create') }}" class="btn btn-secondary">Add New Category</a>
 
 </div>
 @endsection

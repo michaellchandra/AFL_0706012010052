@@ -4,7 +4,7 @@
 
 <div class="container mt-5">
     
-    <form action="{{ route('Category.update') }}" method="post">
+    <form action="{{ route('Category.update', $category->id) }}" method="post">
         @csrf
 
         <input type="hidden" name="_method" value="PATCH">

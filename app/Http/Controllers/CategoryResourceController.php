@@ -83,14 +83,14 @@ class CategoryResourceController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function edit(Category $category)
+    public function edit($id)
     {
         //
-
-        return view('editCategory',  [
+        $category = Category::findOrFail($id);
+        return view('editCategory', compact('category'),  [
             'title' => 'editCategory',
-            'pagetitle' => 'Edit Category',
-            'category' => Category::findOrFail($category)
+            'pagetitle' => 'Edit Category'
+            
         ]);
     }
 
@@ -101,11 +101,11 @@ class CategoryResourceController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Category $category)
+    public function update(Request $request, $id)
     {
         //
 
-        $category = Category::findOrFail($category);
+        $category = Category::findOrFail($id);
         $category->update(
             [
                 'category_name'=>$request->category_name,
@@ -114,6 +114,8 @@ class CategoryResourceController extends Controller
                 'updated_at'=> \Carbon\Carbon::now()
             ]
         );
+
+        return redirect(route('Category.index'));
     }
 
     /**
@@ -122,10 +124,10 @@ class CategoryResourceController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Category $category)
+    public function destroy($id)
     {
         //
-        $category = Category::findOrFail($category);
+        $category = Category::findOrFail($id);
         $category->delete();
         return redirect(route('Category.index'));
     }
