@@ -16,6 +16,9 @@
         <h1 style="font-size: 140px">WELCOME</h1>
         <p style="font-size: 20px">Computer Software Seller</p>
     </div>
+    <div >
+
+    </div>
     @section('main_content')
     
     @endsection
