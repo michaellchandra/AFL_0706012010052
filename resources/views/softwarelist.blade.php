@@ -3,7 +3,7 @@
 @section('title')
 @section('main_content')
 
-<div class="container">
+<div class="container mt-5">
     <h1>Software List</h1>
 
     <table class="table table-striped">
@@ -27,20 +27,23 @@
             <td>{{ $soft['software_description'] }}</td>
 
             <td>
-                <a href="{{ route('Software.edit',$soft->id) }}">
-                    <button type="submit" class="btn">Edit</button>
-                </a>
-
+                <div class="d-flex justify-content-center">
+                    <a href="{{ route('Software.edit',$soft->id) }}">
+                        <button type="submit" class="btn btn-secondary">Edit</button>
+                    </a>
+    
+                    
+                    <form action="{{ route('Software.destroy', $soft->id) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+    
+                    <a href="{{ route('Software.show',$soft->id )}}">
+                        <button type="submit" class="btn btn-info">Show</button>
+                    </a>
+                </div>
                 
-                <form action="{{ route('Software.destroy', $soft->id) }}" method="POST">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" class="btn">Delete</button>
-                </form>
-
-                <a href="{{ route('Software.show',$soft->id )}}">
-                    <button type="submit" class="btn">Show</button>
-                </a>
                 
             </td>
 

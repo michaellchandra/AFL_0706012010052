@@ -7,18 +7,20 @@
     <form action="{{ route('Software.store') }}" method="post">
         @csrf
         <div>
+            <h1>Create Software List</h1>
             <label for="software_name" class="form-label">Software Name : </label>
             <input id="software_name" name="software_name" type="text" class="form-control">
-
+            <br>
             <label for="software_code" class="form-label">Code : </label>
             <input id="software_code" name="software_code" type="text" class="form-control">
-
+            <br>
+            <label for="category_id">Select Category : </label>
             <select name="category_id" id="category_id">
                 @foreach ($category as $cat )
                 <option value="{{ $cat->id }}">{{ $cat->category_name }}</option>
                 @endforeach
             </select>
-        
+            <br>
             <br>
             <label for="software_platform" class="form-label">Platform : </label>
             <select name="software_platform" id="software_platform">
@@ -29,12 +31,13 @@
             </select>
 
             <br>
+            <br>
 
             <label for="software_description" class="form-label">Description : </label>
             <input type="text" name="software_description" class="form-control">
             
             <br>
-            <button type="submit" class="btn bg-success">Submit</button>
+            <button type="submit" class="btn btn-success">Submit</button>
 
 
         </div>

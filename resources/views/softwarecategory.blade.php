@@ -3,7 +3,7 @@
 
 @section('main_content')
 
-<div class="container">
+<div class="container mt-5">
     <h1>Software Category</h1>
 
     <table class="table table-striped">
@@ -20,18 +20,23 @@
             <td>{{ $cat['category_code'] }}</td>
             <td>{{ $cat['category_name'] }}</td>
             <td>
-                <a href="{{ route('Category.edit', $cat->id) }}">
-                    <button type="submit" class="btn">Edit</button>
-                </a>
-                <form action="{{ route('Category.destroy', $cat->id) }}" method="POST">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" class="btn">Delete</button>
-                </form>
+                <div class="d-flex justify-content-center">
+                    <a href="{{ route('Category.edit', $cat->id) }}">
+                        <button type="submit" class="btn btn-secondary">Edit</button>
+                    </a>
+                
+                    <form action="{{ route('Category.destroy', $cat->id) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+    
+                    <a href="{{ route('Category.show',$cat->id )}}">
+                        <button type="submit" class="btn btn-info">Show</button>
+                    </a>
+                </div>
 
-                <a href="{{ route('Category.show',$cat->id )}}">
-                    <button type="submit" class="btn">Show</button>
-                </a>
+                
 
 
             </td>

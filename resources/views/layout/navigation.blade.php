@@ -1,5 +1,7 @@
-<nav class="navbar navbar-expand-sm navbar-inverse bg-warning ">
+<nav class="navbar navbar-expand-sm navbar-inverse bg-light ">
+    
   <div class="container-fluid">
+    <a class="navbar-brand" href="/">Computer Software Seller</a>
       <ul class="nav navbar-nav nav-pills navbar-right ">
           <li class="nav-item">
               <a class="nav-link 

@@ -4,11 +4,12 @@
 
 @section('main_content')
 
-<div class="container">
-    <div class="row justify-content-center">
+<div class="container bg-light">
+    <div class="row justify-content-center ">
         <h1>Detail Software Category {{ $category['category_code'] }}</h1>
         <p>Nama Kategori : {{ $category['category_name'] }}</p>
-
+        <br>
+        <br>
         <h4>List Software</h4>
         <table class="table">
             <thead>
