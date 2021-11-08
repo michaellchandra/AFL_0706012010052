@@ -20,9 +20,9 @@
     </div>
     
     <footer>
-        <div id="sticky-footer" class="justify-content-center fixed-bottom text-center p-3" style="background-color: rgb(94, 94, 94);">
+        <div id="sticky-footer" class="justify-content-center fixed-bottom text-center p-3 text-light" style="background-color: rgb(126, 126, 126);">
             © 2021 Copyright:
-            <a class="text-dark" href="https://macefs.com/">Michael Chandra</a>
+            <a class="text-light" href="https://macefs.com/">Michael Chandra</a>
           </div>
     </footer>
 

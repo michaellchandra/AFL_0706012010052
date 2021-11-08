@@ -2,7 +2,7 @@
 @section('title')
 
 @section('main_content')
-    <div class="container mt-5">
+    <div class="container p-5 mt-5 bg-primary bg-gradient text-light">
         <h1>About</h1>
 
         <p>Computer Software Seller merupakan sebuah website yang berisi list Software yang tersedia di berbagai platfrom seperti Windows, MacOS, Android dan iOS. Software yang tersedia juga dapat disesuaikan dengan kategori yang dapat dibuat.</p>
