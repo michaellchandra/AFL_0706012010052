@@ -10,9 +10,8 @@
             <p>Nama Software : {{ $software['software_name'] }}</p>
             <p>Code Software : {{ $software['software_code'] }}</p>
             <p>Platform : {{ $software['software_platform'] }}</p>
-            <p>Category : {{ $software->category->category_name }}</p>
+            <h4>Category : <b>{{ $software->category->category_name }}</b></h4>
         </div>
-
     </div>
 
 @endsection

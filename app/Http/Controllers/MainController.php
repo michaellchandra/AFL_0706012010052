@@ -13,6 +13,13 @@ class MainController extends Controller
         ]);
     }
 
+    public function about(){
+        return view('about',[
+            'title' => 'about',
+            'pagetitle' => 'About - Computer Software Seller'
+        ]);
+    }
+
     
 
     

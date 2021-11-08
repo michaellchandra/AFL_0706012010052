@@ -26,6 +26,15 @@
               
           </li>
 
+          <li class="nav-item">
+            <a class="nav-link 
+            @if ($title =='about')
+            active
+            @endif" href="/about">About</a>
+        </li>
+
+          
+
       </ul>
   </div>
 </nav>

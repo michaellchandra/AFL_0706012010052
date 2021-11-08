@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [MainController::class, 'index']);
+Route::get('/about', [MainController::class, 'about']);
 // Route::get('/software', [SoftwareController::class, 'viewSoftwareList']);
 // Route::get('/addSoftware',[SoftwareController::class, 'addSoftwareList']);
 // Route::post('/addData',[SoftwareController::class, 'addSoftwareData']);

@@ -3,7 +3,7 @@
 @section('title')
 @section('main_content')
 
-<div class="container mt-5">
+<div class="container mt-5 " style="margin-bottom: 100px">
     <h1>Software List</h1>
 
     <table class="table table-striped">
